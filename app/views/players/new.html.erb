@@ -1,0 +1,52 @@
+# <!-- Use the Rails form_with helper to generate a fjorm -->
+# <h1>New Player</h1>
+<%= form_with model: @player do |player| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+  <div>
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality %>
+  </div>
+  <div>
+    <%= form.label :dob %>
+    <%= form.text_field :dob %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
+
+
+IN BETWEEN RAILS FORM AND HTML FORM
+
+# <!-- Or write out the HTML manually -->
+<h1>New player</h1>
+# axios.post(/players) %>
+<form method="post" action="/players">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>Name </label>
+    <input type="text" name="player[name]">
+  </div>
+  <div>
+    <label>Position </label>
+    <input type="text" name="player[Position]">
+  </div>
+  <div>
+    <label>Nationality </label>
+    <input type="text" name="player[nationality]">
+  </div>
+  <div>
+  <label>Dob </label>
+  <input type="text" name="player[dob]">
+</div>
+  <div>
+    <input type="submit" value="Create player">
+  </div>
+</form>

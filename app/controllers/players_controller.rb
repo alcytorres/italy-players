@@ -9,4 +9,12 @@ class PlayersController < ApplicationController
     render :show
   end
 
+  def new
+    render :new
+  end
+
+  def create
+    p "i am here in create"
+  end
+
 end
