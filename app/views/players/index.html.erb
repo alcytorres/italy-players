@@ -4,7 +4,6 @@
 
 <% @players.each do |player| %>
   <p><%= player.name %></p>
-  <p><%= player.position %></p>
-  <p><%= player.nationality %></p>
-  <p><%= player.dob %></p>
+  <a href="<%= "/players/#{player.id}" %>">More info</a>
+ <hr >
 <% end %>
